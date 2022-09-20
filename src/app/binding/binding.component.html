@@ -1,0 +1,82 @@
+<div class="d-none">
+  <div class="container">
+    <h1>{{ title }}</h1>
+    <div class="card">
+      <div class="card-body">
+        <h4 class="card-text">String interpolation</h4>
+        <ul>
+          <li>{{ product.name }}</li>
+          <li>{{ product.quantity }}</li>
+          <li>{{ product.price }}</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===================property binding========================= -->
+
+<div class="d-none">
+  <div class="container mt-5">
+    <h1>property binding</h1>
+    <button class="btn btn-primary mt-3 w-25" [disabled]="btnstatus">
+      button
+    </button>
+  </div>
+</div>
+
+<!-- ===============================Event binding============================ -->
+<div class="d-none">
+  <div class="container mt-5">
+    <h1>{{ title }}</h1>
+    <button class="btn btn-outline-success" (click)="event()">Change</button>
+  </div>
+</div>
+
+<!-- =========================== two-way binding==================================== -->
+<div class="d-none">
+  <div class="container">
+    <div>
+      <h1>Welcome {{ username }}</h1>
+      <form>
+        <input type="text" name="username" [(ngModel)]="username" />
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- ============================difference between property and interpolation================================ -->
+
+<div class="container">
+  <div class="card w-50 mb-5 p-5">
+    <div class="card-header">
+      <h2>Interpolation</h2>
+    </div>
+    <form>
+      <input
+        type="email"
+        value="{{ email }}"
+        class="form-control"
+        disabled="{{ inputstatus }}"
+      />
+      <button class="btn btn-primary mt-4" (click)="enable()">Enable</button>
+    </form>
+  </div>
+  <div class="card w-50 p-5">
+    <div class="card-header">
+      <h2>Property binding</h2>
+    </div>
+    <form>
+      <input
+        type="email"
+        [value]="email"
+        class="form-control"
+        [disabled]="inputstatus"
+      />
+      <button class="btn btn-primary mt-4" (click)="enable()">Enable</button>
+    </form>
+  </div>
+</div>
+
+<!-- <img src="{{ imgUrl }}" alt="image" class="card-img-top" /> -->
+<!-- <img [src]="imgUrl" alt="image" class="card-img-top" /> -->
